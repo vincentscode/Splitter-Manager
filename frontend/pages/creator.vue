@@ -4,7 +4,7 @@
     <div class="creator-content">
       <p v-if="$fetchState.pending">Lädt...</p>
       <p v-else-if="$fetchState.error">Fehler!</p>
-      <CreationStep v-else v-bind:title="currentStep+1 + '. Schritt: ' + steps[currentStep]['title'] + ' (CharID: ' + currentCharId + ')'"
+      <CreationStep v-else v-bind:title="currentStep+1 + '. Schritt: ' + (false ? steps[currentStep]['title'] + ' (CharID: ' + currentCharId + ')' : '')"
                     v-bind:fields="steps[currentStep]['fields']"
                     v-bind:values="stepsValues"
                     @callback="updateFieldValue" />

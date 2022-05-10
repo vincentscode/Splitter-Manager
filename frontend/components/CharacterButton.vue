@@ -3,11 +3,11 @@
       <div class="character-card status-active">
           <div class="character-card-header">
               <div class="character-card-header-cover-image character-card-header-cover-image-user-backdrop"
-              style="background-image: url(&quot;https://www.dndbeyond.com/avatars/61/525/636453154645689772.jpeg&quot;);"></div>
+              style="background-image: url(&quot;/default-background.jpeg&quot;);"></div>
               <div class="character-card-header-upper">
                 <a @click="view()" class="character-card-header-upper-details-link" tabindex="-1" aria-hidden="true" style="cursor: pointer;"></a>
                   <div class="character-card-header-upper-portrait">
-                      <div class="image user-selected-avatar" style="background-image: url(&quot;https://www.dndbeyond.com/content/skins/waterdeep/images/characters/default-avatar-builder.png&quot;);"></div>
+                      <div class="image user-selected-avatar" style="background-image: url(&quot;/default-avatar.png&quot;);"></div>
                   </div>
                   <div class="character-card-header-upper-character-info">
                     <div class="character-card-header-upper-character-info-primary">{{char.name}}</div>
@@ -115,8 +115,7 @@ export default {
     backdrop-filter: blur(2px);
 }
 
-.character-card-header-upper,
-.character-card-header-lower {
+.character-card-header-upper, .character-card-header-lower {
     position: relative;
     z-index: 1;
 }
@@ -126,13 +125,10 @@ export default {
     align-items: center;
 }
 
-a {
+a, a:hover {
     text-decoration: none;
 }
 
-a:hover {
-    text-decoration: none;
-}
 .character-card-header-upper-details-link {
     position: absolute;
     inset: 0px;
@@ -161,8 +157,7 @@ a:hover {
     padding-right: 10px;
 }
 
-.character-card-header-upper-character-info-primary,
-.character-card-header-upper-character-info-secondary {
+.character-card-header-upper-character-info-primary, .character-card-header-upper-character-info-secondary {
     max-width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -176,8 +171,7 @@ a:hover {
     font-size: 22px;
 }
 
-.character-card-header-upper-character-info-primary,
-.character-card-header-upper-character-info-secondary {
+.character-card-header-upper-character-info-primary, .character-card-header-upper-character-info-secondary {
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
@@ -186,12 +180,6 @@ a:hover {
 
 .character-card-header-upper-character-info-secondary {
     color: rgb(189, 189, 189);
-}
-
-#site .character-card-footer-links-item {
-    text-transform: uppercase;
-    font-size: 13px;
-    font-weight: bold;
 }
 
 .character-card-footer {
@@ -204,18 +192,6 @@ a:hover {
     display: flex;
     justify-content: space-around;
     align-items: center;
-}
-
-#site .character-card-footer-links-item-edit,
-#site .character-card-footer-links-item-view,
-#site .character-card-footer-links-item-claim,
-#site .character-card-footer-links-item-more {
-    display: flex;
-    align-items: flex-start;
-}
-
-.character-card-wrapper {
-    width: 33.3333%;
 }
 
 </style>

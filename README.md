@@ -15,3 +15,9 @@ Misc:
  - Use XP
  - Inventory Management
  - Item List / Selection
+ - "Passwort bestätigen" Feld
+ - Char Creation Arrows
+ - Keine doppelten Stärken / Meisterschaften (außer spezifisch festgelegt)
+ - Load Result Async
+ - max. 6 FP (bei HG 1)
+ - max. 4 (6 mit DM) Resourcen (bei HG 1)

@@ -7,7 +7,7 @@
         <p v-else-if="$fetchState.error">Fehler!</p>
         <p v-else-if="chars.length == 0">Noch keine Charaktere</p>
         <div v-else>
-          <ul>
+          <ul class="character-list-ul">
             <CharacterButton v-for="char in chars" :key="char._id" v-bind:char="char"
                              @reloadCallback="$fetch" />
           </ul>
@@ -15,12 +15,15 @@
         <br>
         <a class="btn" @click="$fetch"><span>Refresh</span></a>
       </div>
-      <div v-else style="float:left; width:100%; margin-top: 15px;">
+      <div v-else-if="!$fetchState.pending" style="float:left; width:100%; margin-top: 15px;">
         <p>Logge dich ein oder registriere dich um Charaktere zu speichern und zu verwalten.</p><br>
         <a class="btn"><NuxtLink to="/login">Einloggen</NuxtLink></a><br>
         <a class="btn"><NuxtLink to="/register">Registrieren</NuxtLink></a>
       </div>
-      <a class="btn" style="margin-left: auto; margin-right: 0; "><NuxtLink to="/creator">Charakterer erstellen</NuxtLink></a>
+      <div v-else style="float:left; width:100%; margin-top: 15px;">
+        <p >Lädt...</p>
+      </div>
+      <a v-if="!$fetchState.pending" class="btn" style="margin-left: auto; margin-right: 0; "><NuxtLink to="/creator">Charakterer erstellen</NuxtLink></a>
     </div>
   </div>
 </template>
@@ -52,6 +55,13 @@
 </script>
 
 <style>
+.character-list-ul {
+  display: grid;
+  grid-template-columns: repeat(3, calc(100% / 3 - 20px / 1.5) );
+  row-gap: -10px;
+  column-gap: 20px;
+}
+
 .container {
   margin: 0 auto;
   min-height: 100vh;
